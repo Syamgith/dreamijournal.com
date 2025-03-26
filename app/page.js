@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -83,24 +82,25 @@ export default function Home() {
         <div className={styles.testimonialGrid}>
           <div className={styles.testimonialCard}>
             <p>
-              "Dreami Diary has helped me remember my dreams in vivid detail.
-              I've discovered patterns I never noticed before!"
+              &ldquo;Dreami Diary has helped me remember my dreams in vivid
+              detail. I&apos;ve discovered patterns I never noticed
+              before!&rdquo;
             </p>
             <p className={styles.testimonialAuthor}>- Sarah K.</p>
           </div>
 
           <div className={styles.testimonialCard}>
             <p>
-              "The insights from tracking my dreams over months have been
-              incredible. I understand myself better now."
+              &ldquo;The insights from tracking my dreams over months have been
+              incredible. I understand myself better now.&rdquo;
             </p>
             <p className={styles.testimonialAuthor}>- Michael T.</p>
           </div>
 
           <div className={styles.testimonialCard}>
             <p>
-              "I've finally achieved lucid dreaming thanks to the techniques and
-              tracking in this app. Life-changing!"
+              &ldquo;I&apos;ve finally achieved lucid dreaming thanks to the
+              techniques and tracking in this app. Life-changing!&rdquo;
             </p>
             <p className={styles.testimonialAuthor}>- Jamie L.</p>
           </div>
