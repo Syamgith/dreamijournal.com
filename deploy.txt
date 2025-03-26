@@ -1,0 +1,151 @@
+Step 1: Prepare Your Next.js Project
+Ensure your Next.js project has a Dockerfile and a docker-compose.yml file. If not, create them.
+
+Create a Dockerfile in Your Next.js Project Root
+dockerfile
+Copy
+Edit
+# Use Node.js as the base image
+FROM node:18-alpine AS builder
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the entire project to the container
+COPY . .
+
+# Build the Next.js application
+RUN npm run build
+
+# Use a minimal Node.js runtime for production
+FROM node:18-alpine AS runner
+WORKDIR /app
+
+# Copy the build files from the builder stage
+COPY --from=builder /app ./
+
+# Expose the Next.js default port
+EXPOSE 3000
+
+# Start the Next.js app
+CMD ["npm", "run", "start"]
+Create a docker-compose.yml File
+yaml
+Copy
+Edit
+version: '3.8'
+services:
+  nextjs:
+    build: .
+    ports:
+      - "3000:3000"
+    restart: always
+    environment:
+      - NODE_ENV=production
+Step 2: Transfer Your Next.js Project to the VPS
+Use SCP or Git to transfer your Next.js project to the VPS.
+
+Option 1: Using SCP (From Your Local Machine)
+Run this in your local terminal:
+
+bash
+Copy
+Edit
+scp -r /path/to/your/nextjs-project username@your-vps-ip:/home/username/
+Option 2: Using Git (If Your Project Is in a Repository)
+Log in to your VPS and clone your repository:
+
+bash
+Copy
+Edit
+git clone https://github.com/your-username/your-nextjs-repo.git
+cd your-nextjs-repo
+Step 3: Deploy the Next.js App with Docker Compose
+SSH into your VPS:
+
+bash
+Copy
+Edit
+ssh username@your-vps-ip
+Navigate to your project directory:
+
+bash
+Copy
+Edit
+cd /home/username/your-nextjs-project
+Build and start the container:
+
+bash
+Copy
+Edit
+docker-compose up -d --build
+Check if the container is running:
+
+bash
+Copy
+Edit
+docker ps
+Step 4: Set Up a Reverse Proxy (Optional)
+If you want to expose your Next.js app to the internet with a domain name, set up NGINX as a reverse proxy.
+
+Install NGINX
+bash
+Copy
+Edit
+sudo apt update
+sudo apt install nginx -y
+Configure NGINX
+Create a new NGINX config file:
+
+bash
+Copy
+Edit
+sudo nano /etc/nginx/sites-available/nextjs
+Add the following configuration:
+
+nginx
+Copy
+Edit
+server {
+    listen 80;
+    server_name yourdomain.com;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+Save and exit (CTRL + X, then Y and Enter).
+
+Enable the NGINX Configuration
+bash
+Copy
+Edit
+sudo ln -s /etc/nginx/sites-available/nextjs /etc/nginx/sites-enabled/
+sudo systemctl restart nginx
+Step 5: Configure a Domain with SSL (If Needed)
+If you have a domain, point your domain’s A record to your VPS IP address and get a free SSL certificate with Let's Encrypt:
+
+bash
+Copy
+Edit
+sudo apt install certbot python3-certbot-nginx -y
+sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
+This will automatically configure SSL for your Next.js app.
+
+Step 6: Manage Your App
+Stop the app: docker-compose down
+
+Restart the app: docker-compose up -d
+
+View logs: docker-compose logs -f
