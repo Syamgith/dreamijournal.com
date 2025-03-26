@@ -1,0 +1,23 @@
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container h1,
+.container h2 {
+  color: #333;
+}
+
+.container ul {
+  margin-left: 20px;
+}
+
+.container p {
+  margin-bottom: 16px;
+}
