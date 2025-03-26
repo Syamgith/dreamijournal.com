@@ -8,4 +8,5 @@ services:
       - "3000:3000"
     restart: always
     environment:
+      - NEXT_PUBLIC_PROXY_MODE=true
       - NODE_ENV=production
