@@ -49,10 +49,7 @@ export default function Home() {
 
       <section className={styles.cta}>
         <h2>Ready to Explore Your Dreams?</h2>
-        <p>
-          Join thousands of dreamers who are discovering the hidden meanings in
-          their subconscious.
-        </p>
+        <p>Join us</p>
         <Link href="https://web.dreamidiary.com" className={styles.ctaButton}>
           Open DreamiDiary Web
         </Link>
