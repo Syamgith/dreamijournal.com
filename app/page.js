@@ -6,12 +6,10 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.hero}>
         <h1 className={styles.title}>Dreami Diary</h1>
-        <p className={styles.description}>
-          Capture, explore, and understand your dreams like never before
-        </p>
+        <p className={styles.description}>Capture and explore your dreams</p>
         <div className={styles.cta}>
           <Link href="https://web.dreamidiary.com" className={styles.ctaButton}>
-            Start Your Dream Journey
+            Open DreamiDiary Web
           </Link>
         </div>
       </div>
@@ -34,16 +32,7 @@ export default function Home() {
             <h3>Dream Analysis</h3>
             <p>
               Discover patterns and meanings in your dreams with our smart
-              analysis tools.
-            </p>
-          </div>
-
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>📊</div>
-            <h3>Dream Insights</h3>
-            <p>
-              Track your dream patterns over time and gain valuable insights
-              into your subconscious.
+              analysis tool powered by AI.
             </p>
           </div>
 
@@ -55,55 +44,6 @@ export default function Home() {
               approach.
             </p>
           </div>
-
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>🌙</div>
-            <h3>Sleep Tracking</h3>
-            <p>
-              Understand the connection between your sleep quality and dream
-              experiences.
-            </p>
-          </div>
-
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>🧠</div>
-            <h3>Lucid Dreaming Tools</h3>
-            <p>
-              Resources and techniques to help you achieve and master lucid
-              dreaming.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.testimonials}>
-        <h2>What Dreamers Are Saying</h2>
-
-        <div className={styles.testimonialGrid}>
-          <div className={styles.testimonialCard}>
-            <p>
-              &ldquo;Dreami Diary has helped me remember my dreams in vivid
-              detail. I&apos;ve discovered patterns I never noticed
-              before!&rdquo;
-            </p>
-            <p className={styles.testimonialAuthor}>- Sarah K.</p>
-          </div>
-
-          <div className={styles.testimonialCard}>
-            <p>
-              &ldquo;The insights from tracking my dreams over months have been
-              incredible. I understand myself better now.&rdquo;
-            </p>
-            <p className={styles.testimonialAuthor}>- Michael T.</p>
-          </div>
-
-          <div className={styles.testimonialCard}>
-            <p>
-              &ldquo;I&apos;ve finally achieved lucid dreaming thanks to the
-              techniques and tracking in this app. Life-changing!&rdquo;
-            </p>
-            <p className={styles.testimonialAuthor}>- Jamie L.</p>
-          </div>
         </div>
       </section>
 
@@ -114,16 +54,16 @@ export default function Home() {
           their subconscious.
         </p>
         <Link href="https://web.dreamidiary.com" className={styles.ctaButton}>
-          Start Your Free Trial
+          Open DreamiDiary Web
         </Link>
       </section>
 
       <footer className={styles.footer}>
-        <p>© 2023 Dreami Diary. All rights reserved.</p>
+        <p>© 2025 Dreami Diary. All rights reserved.</p>
         <div className={styles.footerLinks}>
           <Link href="/privacy">Privacy Policy</Link>
-          <Link href="/terms">Terms of Service</Link>
-          <Link href="/contact">Contact Us</Link>
+          {/* <Link href="/terms">Terms of Service</Link> */}
+          {/* <Link href="/contact">Contact Us</Link> */}
         </div>
       </footer>
     </main>
