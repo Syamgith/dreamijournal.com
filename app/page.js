@@ -6,11 +6,64 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.hero}>
         <h1 className={styles.title}>Dreami Diary</h1>
-        <p className={styles.description}>Capture and explore your dreams</p>
+        <p className={styles.description}>Capture and Explore Your Dreams</p>
+        <p
+          style={{
+            color: "#999999",
+            marginTop: "-10px",
+            marginBottom: "20px",
+            fontWeight: "500",
+          }}
+        >
+          Available on Android and Web
+        </p>
         <div className={styles.cta}>
-          <Link href="https://web.dreamidiary.com" className={styles.ctaButton}>
-            Open DreamiDiary Web
-          </Link>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "20px",
+              width: "100%",
+              maxWidth: "300px",
+              margin: "0 auto",
+            }}
+          >
+            <Link
+              href="https://play.google.com/store/apps/details?id=com.tinystars.dreamidiary"
+              className={styles.ctaButton}
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "#000000",
+                color: "#ffffff",
+                border: "2px solid #0066ff",
+                borderRadius: "8px",
+              }}
+            >
+              <img
+                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                alt="Get it on Google Play"
+                style={{ height: "48px", verticalAlign: "middle" }}
+              />
+            </Link>
+            <Link
+              href="https://web.dreamidiary.com"
+              className={styles.ctaButton}
+              style={{
+                width: "100%",
+                textAlign: "center",
+                backgroundColor: "#000000",
+                color: "#ffffff",
+                border: "2px solid #0066ff",
+                borderRadius: "8px",
+              }}
+            >
+              Open DreamiDiary Web
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -50,9 +103,52 @@ export default function Home() {
       <section className={styles.cta}>
         <h2>Ready to Explore Your Dreams?</h2>
         <p>Join us</p>
-        <Link href="https://web.dreamidiary.com" className={styles.ctaButton}>
-          Open DreamiDiary Web
-        </Link>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "20px",
+            width: "100%",
+            maxWidth: "300px",
+            margin: "0 auto",
+          }}
+        >
+          <Link
+            href="https://play.google.com/store/apps/details?id=com.tinystars.dreamidiary"
+            className={styles.ctaButton}
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "#000000",
+              color: "#ffffff",
+              border: "2px solid #0066ff",
+              borderRadius: "8px",
+            }}
+          >
+            <img
+              src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+              alt="Get it on Google Play"
+              style={{ height: "48px", verticalAlign: "middle" }}
+            />
+          </Link>
+          <Link
+            href="https://web.dreamidiary.com"
+            className={styles.ctaButton}
+            style={{
+              width: "100%",
+              textAlign: "center",
+              backgroundColor: "#000000",
+              color: "#ffffff",
+              border: "2px solid #0066ff",
+              borderRadius: "8px",
+            }}
+          >
+            Open DreamiDiary Web
+          </Link>
+        </div>
       </section>
 
       <footer className={styles.footer}>
