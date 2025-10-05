@@ -5,8 +5,11 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.hero}>
-        <h1 className={styles.title}>Dreami Diary</h1>
-        <p className={styles.description}>Capture and Explore Your Dreams</p>
+        <h1 className={styles.title}>Dreami Diary AI</h1>
+        <p className={styles.description}>
+          Capture and Explore Your Dreams <br />
+          Using Artificial Intelligence
+        </p>
         <p
           style={{
             color: "#999999",
